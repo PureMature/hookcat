@@ -40,8 +40,7 @@ func main() {
 	}
 	fmt.Println("listening on port:", port)
 
-	http.HandleFunc("/", hello)
-	http.HandleFunc("/print", printRequest)
+	http.HandleFunc("/", printRequest)
 
 	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil); err != nil {
 		fmt.Printf("failed to listen on port %d, got error: %v\n", port, err)
